@@ -7,7 +7,7 @@ module TypographicApostrophe
 
         private
         def convert(page_or_post)
-            page_or_post.content.gsub!(/(\w)('|&#39|&apos;)/, '\1&rsquo;')
+            page_or_post.content.gsub!(/(\w)('|&#39|&apos;)(\w| |$)/, '\1&rsquo;\3')
         end
     end
 end
